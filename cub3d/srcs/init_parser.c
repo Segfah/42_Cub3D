@@ -122,6 +122,6 @@ int				init_parser(int fd, t_data *d)
 	if (line[0] != 0)
 		center_parser(d, line);
 	free(line);
-	open_file_texture(d);
+	open_file_texture(d, 0);
 	return (0);
 }

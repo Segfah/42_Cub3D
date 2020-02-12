@@ -16,7 +16,6 @@
 # include <mlx.h>
 # include "libft.h"
 # include <math.h>
-#include <stdio.h>
 
 # define MAX_DISPLAY_X 2560
 # define MAX_DISPLAY_Y 1440
@@ -200,7 +199,7 @@ void			init(t_data *d);
 **	Error
 */
 
-void			open_file_texture(t_data *d);
+void			open_file_texture(t_data *d, int fd);
 int				error_management(int ac, char **av);
 void			ft_ms_error(int i, char *str, char *line);
 void			free_coordinates(t_data *d, char *sms, int key);

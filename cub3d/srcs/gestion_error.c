@@ -16,9 +16,6 @@
 
 static void		open_file_texture2(t_data *d, int fd)
 {
-	if ((fd = open(d->tex.hand1, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
-	close(fd);
 	if ((fd = open(d->tex.hand2, O_RDONLY)) == -1)
 		ft_ms_error(0, "  -La textura no carga.", (void *)0);
 	close(fd);
@@ -48,10 +45,8 @@ static void		open_file_texture2(t_data *d, int fd)
 	close(fd);
 }
 
-void			open_file_texture(t_data *d)
+void			open_file_texture(t_data *d, int fd)
 {
-	int			fd;
-
 	if ((fd = open(d->tex.north, O_RDONLY)) == -1)
 		ft_ms_error(0, "  -La textura no carga.", (void *)0);
 	close(fd);
@@ -71,6 +66,9 @@ void			open_file_texture(t_data *d)
 		ft_ms_error(0, "  -La textura no carga.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.floor, O_RDONLY)) == -1)
+		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+	close(fd);
+	if ((fd = open(d->tex.hand1, O_RDONLY)) == -1)
 		ft_ms_error(0, "  -La textura no carga.", (void *)0);
 	close(fd);
 	open_file_texture2(d, fd);
