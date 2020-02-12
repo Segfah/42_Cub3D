@@ -98,17 +98,17 @@ void			ft_verif(t_data *d, int **map, int x, int y)
 	while (x < y)
 	{
 		if (map[0][x++] != 1)
-			free_map(d, d->map.y - 1, "  -Falta una pared en el mapa");
+			free_map(d, d->map.y - 1, "  -Walls missing");
 	}
 	x = -1;
 	while (++x < d->tmps.cmp_map)
 	{
 		if (map[x][0] != 1 || map[x][y - 1] != 1)
-			free_map(d, d->map.y - 1, "  -Falta una pared en el mapa");
+			free_map(d, d->map.y - 1, "  -Walls missing");
 		player_pos(d, map[x], x, y);
 	}
 	x = 0;
 	while (x < y)
 		if (map[d->tmps.cmp_map - 1][x++] != 1)
-			free_map(d, d->map.y - 1, "  -Falta una pared en el mapa");
+			free_map(d, d->map.y - 1, "  -Walls missing");
 }

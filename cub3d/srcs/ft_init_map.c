@@ -40,7 +40,7 @@ static void			ft_cont_map(char *av, t_data *d)
 	char			*line;
 
 	if ((fd = open(av, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -No se pudo leer el archivo.", (void *)0);
+		ft_ms_error(0, "  -Could not open file.", (void *)0);
 	d->tmps.cmp_map = 0;
 	while ((d->tmps.ret = ft_gnl(fd, &line)) > 0)
 	{
@@ -58,7 +58,7 @@ static void			ft_cont_map(char *av, t_data *d)
 	close(fd);
 	d->tmps.cmp_map -= 11;
 	if (d->tmps.cmp_map < 4)
-		ft_ms_error(0, "  -Mapa muy chico o parametro faltante.", (void *)0);
+		ft_ms_error(0, "  -Map corrupted.", (void *)0);
 }
 
 void				ft_init_map(char *av, t_data *d)
@@ -68,9 +68,9 @@ void				ft_init_map(char *av, t_data *d)
 	resolution(d);
 	ft_cont_map(av, d);
 	if (!(d->map.map = (int **)malloc(sizeof(int *) * d->tmps.cmp_map)))
-		free_coordinates(d, "  -Malloc", 0);
+		free_coordinates(d, "  -Allocating memory", 0);
 	if ((fd = open(av, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -No se pudo leer el archivo.", (void *)0);
+		ft_ms_error(0, "  -Could not open file.", (void *)0);
 	if (init_parser(fd, d, 0) == -1)
 		ft_ms_error(0, "  -Fallo mientras se leia el archivo.", (void *)0);
 	close(fd);

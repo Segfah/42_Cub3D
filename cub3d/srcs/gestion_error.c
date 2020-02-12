@@ -17,56 +17,56 @@
 static void		open_file_texture2(t_data *d, int fd)
 {
 	if ((fd = open(d->tex.hand2, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.hand3, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(LIFE0, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(LIFE1, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(LIFE2, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(LIFE3, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(LIFE4, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(LIFE5, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 }
 
 void			open_file_texture(t_data *d, int fd)
 {
 	if ((fd = open(d->tex.north, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.south, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.east, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.west, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.sky, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.sprite, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.floor, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	if ((fd = open(d->tex.hand1, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(fd);
 	open_file_texture2(d, fd);
 }
@@ -80,10 +80,10 @@ void			ft_ms_error(int i, char *str, char *line)
 		free(line);
 	else
 	{
-		(i == 1) ? ft_putendl_fd("  -Mapa no encontrado", 2) : 0;
-		(i == -1) ? ft_putendl_fd("  -Comando erroneo", 2) : 0;
-		(i == -2) ? ft_putendl_fd("  -Formato no soportado", 2) : 0;
-		(i > 3) ? ft_putendl_fd("  -Multiple mapa", 2) : 0;
+		(i == 1) ? ft_putendl_fd("  -Map not found", 2) : 0;
+		(i == -1) ? ft_putendl_fd("  -Wrong command", 2) : 0;
+		(i == -2) ? ft_putendl_fd("  -Wrong format", 2) : 0;
+		(i > 3) ? ft_putendl_fd("  -Many arguments", 2) : 0;
 	}
 	exit(1);
 }
