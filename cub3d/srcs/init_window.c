@@ -14,10 +14,6 @@
 
 static void		textures3(t_data *d)
 {
-	d->txt[11].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, LIFE0,
-	&d->txt[11].size_l, &d->txt[11].endian);
-	d->txt[11].data = (int *)mlx_get_data_addr(d->txt[11].img_ptr,
-	&d->txt[11].bpp, &d->txt[11].size_l, &d->txt[11].endian);
 	d->txt[12].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, LIFE1,
 	&d->txt[12].size_l, &d->txt[12].endian);
 	d->txt[12].data = (int *)mlx_get_data_addr(d->txt[12].img_ptr,
@@ -42,15 +38,10 @@ static void		textures3(t_data *d)
 	&d->txt[17].size_l, &d->txt[17].endian);
 	d->txt[17].data = (int *)mlx_get_data_addr(d->txt[17].img_ptr,
 	&d->txt[17].bpp, &d->txt[17].size_l, &d->txt[17].endian);
-
 }
 
 static void		textures2(t_data *d)
 {
-	d->txt[5].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, d->tex.sprite,
-	&d->txt[5].size_l, &d->txt[5].endian);
-	d->txt[5].data = (int *)mlx_get_data_addr(d->txt[5].img_ptr,
-	&d->txt[5].bpp, &d->txt[5].size_l, &d->txt[5].endian);
 	d->txt[6].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, d->tex.floor,
 	&d->txt[6].size_l, &d->txt[6].endian);
 	d->txt[6].data = (int *)mlx_get_data_addr(d->txt[6].img_ptr,
@@ -67,11 +58,15 @@ static void		textures2(t_data *d)
 	&d->txt[9].size_l, &d->txt[9].endian);
 	d->txt[9].data = (int *)mlx_get_data_addr(d->txt[9].img_ptr,
 	&d->txt[9].bpp, &d->txt[9].size_l, &d->txt[9].endian);
-	d->txt[10].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr,
-	"./textures/horror/gameover.xpm",
+	d->txt[10].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, GAMEOVER,
 	&d->txt[10].size_l, &d->txt[10].endian);
 	d->txt[10].data = (int *)mlx_get_data_addr(d->txt[10].img_ptr,
 	&d->txt[10].bpp, &d->txt[10].size_l, &d->txt[10].endian);
+	d->txt[11].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, LIFE0,
+	&d->txt[11].size_l, &d->txt[11].endian);
+	d->txt[11].data = (int *)mlx_get_data_addr(d->txt[11].img_ptr,
+	&d->txt[11].bpp, &d->txt[11].size_l, &d->txt[11].endian);
+	textures3(d);
 }
 
 static void		textures(t_data *d)
@@ -96,8 +91,11 @@ static void		textures(t_data *d)
 	&d->txt[4].size_l, &d->txt[4].endian);
 	d->txt[4].data = (int *)mlx_get_data_addr(d->txt[4].img_ptr,
 	&d->txt[4].bpp, &d->txt[4].size_l, &d->txt[4].endian);
+	d->txt[5].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, d->tex.sprite,
+	&d->txt[5].size_l, &d->txt[5].endian);
+	d->txt[5].data = (int *)mlx_get_data_addr(d->txt[5].img_ptr,
+	&d->txt[5].bpp, &d->txt[5].size_l, &d->txt[5].endian);
 	textures2(d);
-	textures3(d);
 }
 
 void			init(t_data *d)

@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include <fcntl.h>
+#include <unistd.h>
 
 static void		ft_resolution(char *str, t_data *d)
 {
@@ -103,7 +105,7 @@ static void		center_parser(t_data *d, char *line)
 		center_perser2(d, line);
 }
 
-int				init_parser(int fd, t_data *d)
+int				init_parser(int fd, t_data *d, int f)
 {
 	char		*line;
 
@@ -122,6 +124,9 @@ int				init_parser(int fd, t_data *d)
 	if (line[0] != 0)
 		center_parser(d, line);
 	free(line);
-	open_file_texture(d, 0);
+	open_file_texture(d, f);
+	if ((f = open(POISON, O_RDONLY)) == -1)
+		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+	close(f);
 	return (0);
 }

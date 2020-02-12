@@ -60,6 +60,29 @@ static void		lowest_highest_pixel(t_data *d, int x)
 		d->rtc.drawend = d->res.r_y - 1;
 }
 
+static void		put_image(t_data *d)
+{
+	if (d->map.map[(int)d->pl.posy][(int)d->pl.posx] == 3)
+	{
+		d->map.map[(int)d->pl.posy][(int)d->pl.posx] = 0;
+		d->pl.life -= 1;
+	}
+	mlx_put_image_to_window(d->mlx_ptr, d->win_ptr, d->img.img_ptr, 0, 0);
+	mlx_put_image_to_window(d->mlx_ptr, d->win_ptr,
+	d->txt[7 + d->pl.mobile].img_ptr, d->res.r_x / 2 - 700, d->res.r_y - 930);
+	if (d->pl.mobile == 1)
+		d->pl.mobile = 2;
+	mlx_put_image_to_window(d->mlx_ptr, d->win_ptr,
+		d->txt[11 + d->pl.life].img_ptr, 0, 0);
+	if (d->pl.life == 0)
+	{
+		mlx_put_image_to_window(d->mlx_ptr, d->win_ptr,
+		d->txt[10].img_ptr, 1 / 2, 0);
+		d->sp = 0.0;
+		d->rt = 0.0;
+	}
+}
+
 int				raycasting(t_data *d)
 {
 	d->rtc.ln = -1;
@@ -75,23 +98,6 @@ int				raycasting(t_data *d)
 	}
 	sprites_casting(d, -1);
 	move(d);
-	if (d->map.map[(int)d->pl.posy][(int)d->pl.posx] == 3)
-	{
-		d->map.map[(int)d->pl.posy][(int)d->pl.posx] = 0;
-		d->pl.life -= 1;
-	}
-	mlx_put_image_to_window(d->mlx_ptr, d->win_ptr, d->img.img_ptr, 0, 0);
-	mlx_put_image_to_window(d->mlx_ptr, d->win_ptr,
-	d->txt[7 + d->pl.mobile].img_ptr, d->res.r_x / 2 - 700, d->res.r_y - 930);
-	if (d->pl.mobile == 1)
-		d->pl.mobile = 2;
-	mlx_put_image_to_window(d->mlx_ptr, d->win_ptr, d->txt[11 + d->pl.life].img_ptr, 0, 0);
-	if (d->pl.life == 0)
-	{
-		mlx_put_image_to_window(d->mlx_ptr, d->win_ptr,
-		d->txt[10].img_ptr, 1 / 2, 0);
-		d->sp = 0.0;
-		d->rt = 0.0;
-	}
+	put_image(d);
 	return (0);
 }

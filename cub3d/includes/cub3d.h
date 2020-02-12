@@ -6,7 +6,7 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 22:32:23 by corozco           #+#    #+#             */
-/*   Updated: 2020/02/11 22:21:37 by corozco          ###   ########.fr       */
+/*   Updated: 2020/02/12 05:42:22 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define LIFE4 "textures/comun/life4.xpm"
 # define LIFE5 "textures/comun/life5.xpm"
 # define POISON "textures/comun/poison.xpm"
+# define GAMEOVER "textures/horror/gameover.xpm"
 
 typedef struct	s_tex
 {
@@ -210,7 +211,7 @@ void			free_map(t_data *d, int i, char *sms);
 */
 
 void			ft_init_map(char *av, t_data *d);
-int				init_parser(int fd, t_data *d);
+int				init_parser(int fd, t_data *d, int f);
 void			conv_map(t_data *d, char *line, int i, int y);
 void			ft_verif(t_data *d, int **map, int x, int y);
 

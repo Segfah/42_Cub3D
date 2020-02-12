@@ -2,10 +2,11 @@
 ## -Cub3D(42cursus-2020//Paris)
 
 ```sh
-$ status = 
+$ status =
     	#unfinished
 
 $ Recordar =
+  #cambiar los botones a peticion de leo.
 	#ojo que no hay open de gameover
 	#Cambiar las string que estan en español
 	# --save

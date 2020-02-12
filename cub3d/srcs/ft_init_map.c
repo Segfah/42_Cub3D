@@ -71,7 +71,7 @@ void				ft_init_map(char *av, t_data *d)
 		free_coordinates(d, "  -Malloc", 0);
 	if ((fd = open(av, O_RDONLY)) == -1)
 		ft_ms_error(0, "  -No se pudo leer el archivo.", (void *)0);
-	if (init_parser(fd, d) == -1)
+	if (init_parser(fd, d, 0) == -1)
 		ft_ms_error(0, "  -Fallo mientras se leia el archivo.", (void *)0);
 	close(fd);
 	if (d->map.boolean == 0 || d->map.boolean > 1)

@@ -17,22 +17,22 @@ static void		move3(t_data *d)
 	if (d->move.eright == 1)
 	{
 		if (d->map.map[(int)(d->pl.posy + d->pl.dirx * d->sp)]
-		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy + d->pl.dirx * d->sp)]
-		[(int)(d->pl.posx)] == 3)
+		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy
+		+ d->pl.dirx * d->sp)][(int)(d->pl.posx)] == 3)
 			d->pl.posy -= -d->pl.dirx * d->sp;
-		if (d->map.map[(int)(d->pl.posy)]
-		[(int)(d->pl.posx - d->pl.diry * d->sp)] == 0 || d->map.map[(int)(d->pl.posy)]
+		if (d->map.map[(int)(d->pl.posy)][(int)(d->pl.posx - d->pl.diry
+		* d->sp)] == 0 || d->map.map[(int)(d->pl.posy)]
 		[(int)(d->pl.posx - d->pl.diry * d->sp)] == 3)
 			d->pl.posx -= d->pl.diry * d->sp;
 	}
 	if (d->move.qleft == 1)
 	{
 		if (d->map.map[(int)(d->pl.posy - d->pl.dirx * d->sp)]
-		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy - d->pl.dirx * d->sp)]
-		[(int)(d->pl.posx)] == 3)
+		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy - d->pl.dirx
+		* d->sp)][(int)(d->pl.posx)] == 3)
 			d->pl.posy += -d->pl.dirx * d->sp;
-		if (d->map.map[(int)(d->pl.posy)]
-		[(int)(d->pl.posx + d->pl.diry * d->sp)] == 0 || d->map.map[(int)(d->pl.posy)]
+		if (d->map.map[(int)(d->pl.posy)][(int)(d->pl.posx + d->pl.diry
+		* d->sp)] == 0 || d->map.map[(int)(d->pl.posy)]
 		[(int)(d->pl.posx + d->pl.diry * d->sp)] == 0)
 			d->pl.posx += d->pl.diry * d->sp;
 	}
@@ -65,24 +65,24 @@ int				move(t_data *d)
 {
 	if (d->move.up == 1)
 	{
-		if (d->map.map[(int)(d->pl.posy)]
-		[(int)(d->pl.posx + d->pl.dirx * d->sp)] == 0 || d->map.map[(int)(d->pl.posy)]
-		[(int)(d->pl.posx + d->pl.dirx * d->sp)] == 3)
+		if (d->map.map[(int)(d->pl.posy)][(int)(d->pl.posx + d->pl.dirx
+		* d->sp)] == 0 || d->map.map[(int)(d->pl.posy)][(int)(d->pl.posx
+		+ d->pl.dirx * d->sp)] == 3)
 			d->pl.posx += d->pl.dirx * d->sp;
 		if (d->map.map[(int)(d->pl.posy + d->pl.diry * d->sp)]
-		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy + d->pl.diry * d->sp)]
-		[(int)(d->pl.posx)] == 3)
+		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy + d->pl.diry
+		* d->sp)][(int)(d->pl.posx)] == 3)
 			d->pl.posy += d->pl.diry * d->sp;
 	}
 	if (d->move.down == 1)
 	{
-		if (d->map.map[(int)(d->pl.posy)]
-		[(int)(d->pl.posx - d->pl.dirx * d->sp)] == 0 || d->map.map[(int)(d->pl.posy)]
-		[(int)(d->pl.posx - d->pl.dirx * d->sp)] == 3)
+		if (d->map.map[(int)(d->pl.posy)][(int)(d->pl.posx - d->pl.dirx
+		* d->sp)] == 0 || d->map.map[(int)(d->pl.posy)][(int)(d->pl.posx
+		- d->pl.dirx * d->sp)] == 3)
 			d->pl.posx -= d->pl.dirx * d->sp;
 		if (d->map.map[(int)(d->pl.posy - d->pl.diry * d->sp)]
-		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy - d->pl.diry * d->sp)]
-		[(int)(d->pl.posx)] == 3)
+		[(int)(d->pl.posx)] == 0 || d->map.map[(int)(d->pl.posy
+		- d->pl.diry * d->sp)][(int)(d->pl.posx)] == 3)
 			d->pl.posy -= d->pl.diry * d->sp;
 	}
 	move2(d);
