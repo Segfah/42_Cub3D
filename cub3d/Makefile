@@ -6,7 +6,7 @@
 #    By: corozco <corozco@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/24 05:41:03 by corozco           #+#    #+#              #
-#    Updated: 2020/02/11 22:24:08 by corozco          ###   ########.fr        #
+#    Updated: 2020/02/12 04:15:44 by corozco          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = Cub3D
 HEAD := -I./includes/ -I./minilibx_mms_20191207_beta -I./minilibx_opengl_20191021 -I./libft/includes
 
 CFLAGS = -Wall -Wextra -Werror
+#CFLAGS = -g3 -fsanitize=address -Wall -Wextra -Werror
 
 SRC := \
 	srcs/main.c \
@@ -70,6 +71,7 @@ $(NAME): $(OBJS)
 	@make -sC ./libft
 	@echo ''
 	@gcc $(HEAD) $(LMLX) $(OBJS) -o $(NAME) -L./libft -lft
+#	@gcc -g3 -fsanitize=address $(HEAD) $(LMLX) $(OBJS) -o $(NAME) -L./libft -lft
 	@echo '	 '
 	@echo '	......( \_/ ) '
 	@echo '	......( o_o ) '

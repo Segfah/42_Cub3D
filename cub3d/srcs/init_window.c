@@ -38,6 +38,10 @@ static void		textures3(t_data *d)
 	&d->txt[16].size_l, &d->txt[16].endian);
 	d->txt[16].data = (int *)mlx_get_data_addr(d->txt[16].img_ptr,
 	&d->txt[16].bpp, &d->txt[16].size_l, &d->txt[16].endian);
+	d->txt[17].img_ptr = mlx_xpm_file_to_image(d->mlx_ptr, POISON,
+	&d->txt[17].size_l, &d->txt[17].endian);
+	d->txt[17].data = (int *)mlx_get_data_addr(d->txt[17].img_ptr,
+	&d->txt[17].bpp, &d->txt[17].size_l, &d->txt[17].endian);
 
 }
 

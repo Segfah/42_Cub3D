@@ -87,7 +87,11 @@ int				raycasting(t_data *d)
 		d->pl.mobile = 2;
 	mlx_put_image_to_window(d->mlx_ptr, d->win_ptr, d->txt[11 + d->pl.life].img_ptr, 0, 0);
 	if (d->pl.life == 0)
+	{
 		mlx_put_image_to_window(d->mlx_ptr, d->win_ptr,
 		d->txt[10].img_ptr, 1 / 2, 0);
+		d->sp = 0.0;
+		d->rt = 0.0;
+	}
 	return (0);
 }

@@ -43,6 +43,9 @@ static void		open_file_texture2(t_data *d, int fd)
 	if ((fd = open(LIFE5, O_RDONLY)) == -1)
 		ft_ms_error(0, "  -La textura no carga.", (void *)0);
 	close(fd);
+	if ((fd = open(POISON, O_RDONLY)) == -1)
+		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+	close(fd);
 }
 
 void			open_file_texture(t_data *d)

@@ -17,7 +17,7 @@ static int		check_map(char c, t_data *d)
 	if (c == '0' || c == '1' || c == '2' || c == 'N'
 			|| c == 'S' || c == 'E' || c == 'W' || c == '3')
 	{
-		if (c == '2')
+		if (c == '2' || c == '3')
 			d->sprcount++;
 		return (1);
 	}
@@ -83,10 +83,11 @@ void			player_pos(t_data *d, int *map, int x, int y)
 			orientation(d, map[j]);
 			map[j] = 0;
 		}
-		if (map[j] == 2)
+		if (map[j] == 2 || map[j] == 3)
 		{
 			d->sprite[d->cmp_sp].x = j + 0.5;
 			d->sprite[d->cmp_sp].y = x + 0.5;
+			d->sprite[d->cmp_sp].texture = map[j] == 2 ? 5 : 17;
 			d->cmp_sp++;
 		}
 	}

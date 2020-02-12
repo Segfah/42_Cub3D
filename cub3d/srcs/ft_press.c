@@ -39,7 +39,8 @@ static int		key_press(int key, t_data *d)
 		if (d->move.eright == 0)
 			d->move.eright = 1;
 	if (key == 257)
-		d->sp = 0.15;
+		if (d->sp != 0.0)
+			d->sp = 0.15;
 	if (key == 49)
 		if (d->pl.mobile == 0)
 			d->pl.mobile = 1;
@@ -63,7 +64,8 @@ static int		key_release(int key, t_data *d)
 	if (key == 53)
 		exit(0);
 	if (key == 257)
-		d->sp = 0.07;
+		if (d->sp != 0.0)
+			d->sp = 0.07;
 	if (key == 49)
 		d->pl.mobile = 0;
 	return (0);

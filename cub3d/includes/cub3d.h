@@ -29,6 +29,7 @@
 # define LIFE3 "textures/comun/life3.xpm"
 # define LIFE4 "textures/comun/life4.xpm"
 # define LIFE5 "textures/comun/life5.xpm"
+# define POISON "textures/comun/poison.xpm"
 
 typedef struct	s_tex
 {

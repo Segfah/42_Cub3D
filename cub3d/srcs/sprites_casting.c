@@ -63,7 +63,7 @@ static void			translate_sprite(t_data *d, int j, double idev)
 	calculate_lowest(d);
 }
 
-static void			draw_sprite(t_data *d, int stripe, int k)
+static void			draw_sprite(t_data *d, int stripe, int k, int t)
 {
 	stripe = d->drawstartx;
 	while (stripe < d->drawendx)
@@ -77,7 +77,7 @@ static void			draw_sprite(t_data *d, int stripe, int k)
 			{
 				d->texy = (k - d->res.r_y / 2 + d->spriteheight / 2) * TEXS
 				/ d->spriteheight;
-				d->rtc.color = d->txt[5].data[TEXS * d->texy
+				d->rtc.color = d->txt[d->sprite[t].texture].data[TEXS * d->texy
 				+ d->rtc.texx];
 				if (d->rtc.color != 0xFFFFFF)
 					d->img.data[k * d->res.r_x + stripe] = d->rtc.color;
@@ -98,6 +98,6 @@ void				sprites_casting(t_data *d, int i)
 	while (++i < d->sprcount)
 	{
 		translate_sprite(d, i, 0.0);
-		draw_sprite(d, 0, 0);
+		draw_sprite(d, 0, 0, i);
 	}
 }
