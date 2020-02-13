@@ -78,8 +78,8 @@ void			player_pos(t_data *d, int *map, int x, int y)
 	{
 		if (map[j] == 30 || map[j] == 35 || map[j] == 39 || map[j] == 21)
 		{
-			d->pl.posx = j;
-			d->pl.posy = x;
+			d->pl.posx = j + 0.5;
+			d->pl.posy = x + 0.5;
 			orientation(d, map[j]);
 			map[j] = 0;
 		}

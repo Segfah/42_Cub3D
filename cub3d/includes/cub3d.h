@@ -16,6 +16,7 @@
 # include <mlx.h>
 # include "libft.h"
 # include <math.h>
+#include <stdio.h>
 
 # define MAX_DISPLAY_X 2560
 # define MAX_DISPLAY_Y 1440
@@ -242,5 +243,17 @@ void			ft_press(t_data *d);
 */
 
 void			sprites_casting(t_data *d, int i);
+
+
+/*
+**
+*/
+
+# define HEADER_SIZE 122
+
+void	fill_bmp(char **data, t_data *d);
+void	header_bmp(char **data, t_data *d);
+void	export_bmp(char *filename, t_data *d);
+char	*create_bmp_filename(char *file, int i, t_data *d);
 
 #endif

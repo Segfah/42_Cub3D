@@ -30,6 +30,7 @@ SRC := \
 	srcs/draw.c \
 	srcs/sprites_casting.c \
 	srcs/open_file.c \
+	srcs/bmp.c \
 
 LMLX = -lft -lm -lmlx -framework OpenGL -framework AppKit
 

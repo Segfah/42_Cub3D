@@ -29,6 +29,7 @@ int				error_management(int ac, char **av)
 int				main(int ac, char **av)
 {
 	t_data		data;
+	int i;
 
 	if (ac != 2 && ac != 3)
 		ft_ms_error(ac, (void *)0, (void *)0);
@@ -36,8 +37,20 @@ int				main(int ac, char **av)
 		ft_ms_error(data.tmps.i_tmp, (void *)0, (void *)0);
 	ft_init_map(av[1], &data);
 	init(&data);
-	mlx_loop_hook(data.mlx_ptr, raycasting, &data);
-	ft_press(&data);
-	mlx_loop(data.mlx_ptr);
+	if (ac == 2)
+	{
+		mlx_loop_hook(data.mlx_ptr, raycasting, &data);
+		ft_press(&data);
+		mlx_loop(data.mlx_ptr);
+	}
+	else
+	{
+		i = 0;
+		raycasting(&data);
+		while (av[1][i] != '.')
+		i++;
+		export_bmp(create_bmp_filename(av[1], i, &data), &data);
+		exit(1);
+	}
 	return (0);
 }
