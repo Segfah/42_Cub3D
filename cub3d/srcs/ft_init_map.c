@@ -71,7 +71,7 @@ void				ft_init_map(char *av, t_data *d)
 		free_coordinates(d, "  -Allocating memory", 0);
 	if ((fd = open(av, O_RDONLY)) == -1)
 		ft_ms_error(0, "  -Could not open file.", (void *)0);
-	if (init_parser(fd, d, 0) == -1)
+	if (init_parser(fd, d) == -1)
 		ft_ms_error(0, "  -Reading from file.", (void *)0);
 	close(fd);
 	if (d->map.boolean == 0 || d->map.boolean > 1)

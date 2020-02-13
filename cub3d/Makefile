@@ -29,6 +29,7 @@ SRC := \
 	srcs/raycasting.c \
 	srcs/draw.c \
 	srcs/sprites_casting.c \
+	srcs/open_file.c \
 
 LMLX = -lft -lm -lmlx -framework OpenGL -framework AppKit
 

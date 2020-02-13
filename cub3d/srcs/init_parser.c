@@ -105,7 +105,7 @@ static void		center_parser(t_data *d, char *line)
 		center_perser2(d, line);
 }
 
-int				init_parser(int fd, t_data *d, int f)
+int				init_parser(int fd, t_data *d)
 {
 	char		*line;
 
@@ -124,9 +124,6 @@ int				init_parser(int fd, t_data *d, int f)
 	if (line[0] != 0)
 		center_parser(d, line);
 	free(line);
-	open_file_texture(d, f);
-	if ((f = open(POISON, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
-	close(f);
+	open_file_texture(d, 0);
 	return (0);
 }
