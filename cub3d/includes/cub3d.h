@@ -6,7 +6,7 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 22:32:23 by corozco           #+#    #+#             */
-/*   Updated: 2020/02/12 05:42:22 by corozco          ###   ########.fr       */
+/*   Updated: 2020/02/14 00:34:37 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <mlx.h>
 # include "libft.h"
 # include <math.h>
-#include <stdio.h>
 
 # define MAX_DISPLAY_X 2560
 # define MAX_DISPLAY_Y 1440
@@ -244,16 +243,13 @@ void			ft_press(t_data *d);
 
 void			sprites_casting(t_data *d, int i);
 
-
 /*
-**
+**	bmp
 */
 
-# define HEADER_SIZE 122
-
-void	fill_bmp(char **data, t_data *d);
-void	header_bmp(char **data, t_data *d);
-void	export_bmp(char *filename, t_data *d);
-char	*create_bmp_filename(char *file, int i, t_data *d);
+void			fill_bmp(char **data, t_data *d);
+void			header_bmp(char **data, t_data *d);
+void			export_bmp(char *filename, t_data *d);
+char			*create_bmp_filename(char *file, int i, t_data *d);
 
 #endif

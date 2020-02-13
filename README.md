@@ -6,12 +6,15 @@ $ status =
     	#unfinished
 
 $ Recordar =
-  #cambiar los botones a peticion de leo.
-	#ojo que no hay open de gameover
-	#Cambiar las string que estan en español
+	#cambiar los botones a peticion de leo.
 	# --save
 	#Musica
 	#screamer
-	#lifes
+
+# Problemes
+Si texture MUR recopier
+fichier non texture
+non xpm
+resolution x2
 ```
 #./Cub3D maps/map0.cub

@@ -6,7 +6,7 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 02:05:01 by corozco           #+#    #+#             */
-/*   Updated: 2020/02/13 02:05:11 by corozco          ###   ########.fr       */
+/*   Updated: 2020/02/14 00:34:55 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	fill_bmp(char **data, t_data *d)
 	int x;
 	int y;
 
-	i = HEADER_SIZE;
+	i = 122;
 	y = d->res.r_y;
 	while (y--)
 	{
@@ -42,10 +42,10 @@ void	header_bmp(char **data, t_data *d)
 
 	size = d->res.r_y * d->res.r_x * 3;
 	*(unsigned short *)*data = *(const unsigned int *)(unsigned long)"BM";
-	*(unsigned int *)(*data + 2) = (size + HEADER_SIZE);
+	*(unsigned int *)(*data + 2) = (size + 122);
 	*(unsigned int *)(*data + 6) = 0u;
-	*(unsigned char *)(*data + 10) = HEADER_SIZE;
-	*(unsigned int *)(*data + 14) = HEADER_SIZE - 14;
+	*(unsigned char *)(*data + 10) = 122;
+	*(unsigned int *)(*data + 14) = 122 - 14;
 	*(unsigned int *)(*data + 18) = d->res.r_x;
 	*(unsigned int *)(*data + 22) = d->res.r_y;
 	*(unsigned short *)(*data + 26) = 1;
@@ -66,18 +66,16 @@ void	export_bmp(char *filename, t_data *d)
 	char			*data;
 
 	size = d->res.r_y * d->res.r_x * 3;
-	if (!(data = malloc((size + HEADER_SIZE))))
+	if (!(data = malloc((size + 122))))
 		free_coordinates(d, "  -Allocating memory", 0);
 	i = 0;
-	while (i < size + HEADER_SIZE)
+	while (i < size + 122)
 		data[i++] = 0;
 	header_bmp(&data, d);
-
 	fill_bmp(&data, d);
-
 	if ((fd = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0644)) <= 0)
 		free_coordinates(d, "  -Cannot create/Trunc/Write in file .bmp", 0);
-	write(fd, data, (size + HEADER_SIZE));
+	write(fd, data, (size + 122));
 	close(fd);
 }
 

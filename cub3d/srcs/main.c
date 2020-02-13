@@ -6,7 +6,7 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 22:29:43 by corozco           #+#    #+#             */
-/*   Updated: 2020/02/12 23:16:23 by corozco          ###   ########.fr       */
+/*   Updated: 2020/02/14 00:35:29 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int				error_management(int ac, char **av)
 int				main(int ac, char **av)
 {
 	t_data		data;
-	int i;
+	int			i;
 
 	if (ac != 2 && ac != 3)
 		ft_ms_error(ac, (void *)0, (void *)0);
@@ -48,7 +48,7 @@ int				main(int ac, char **av)
 		i = 0;
 		raycasting(&data);
 		while (av[1][i] != '.')
-		i++;
+			i++;
 		export_bmp(create_bmp_filename(av[1], i, &data), &data);
 		exit(1);
 	}

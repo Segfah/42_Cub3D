@@ -6,7 +6,7 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 16:07:50 by corozco           #+#    #+#             */
-/*   Updated: 2020/02/11 04:31:46 by corozco          ###   ########.fr       */
+/*   Updated: 2020/02/14 00:30:13 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void			resolution(t_data *d)
 	d->move.right = 0;
 	d->move.qleft = 0;
 	d->move.eright = 0;
-	d->sp = 0.05;
+	d->sp = 0.0500001;
 	d->rt = 0.06;
 	d->sprcount = 0;
 	d->cmp_sp = 0;
