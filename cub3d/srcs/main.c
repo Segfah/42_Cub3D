@@ -21,7 +21,7 @@ int				error_management(int ac, char **av)
 	if (ft_strncmp(&av[1][ft_strlen(av[1]) - 4], ".cub", 4))
 		return (-2);
 	if (ac == 3)
-		if (ft_strncmp(av[2], "-save", 5) != 0)
+		if (ft_strncmp(av[2], "--save", 6) != 0)
 			return (-1);
 	return (0);
 }

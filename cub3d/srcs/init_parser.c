@@ -20,7 +20,7 @@ static void		ft_resolution(char *str, t_data *d)
 	d->res.r_x = ft_atoi(&str[1]);
 	while (str[++d->tmps.i_tmp])
 		if (!ft_isdigit(str[d->tmps.i_tmp]) && !ft_isspace(str[d->tmps.i_tmp]))
-			ft_ms_error(0, "-Hay una letra en la resolucion", str);
+			ft_ms_error(0, "  -Resolution", str);
 	d->tmps.i_tmp = 1;
 	while (ft_isspace(str[d->tmps.i_tmp]))
 		++d->tmps.i_tmp;
@@ -29,7 +29,7 @@ static void		ft_resolution(char *str, t_data *d)
 	while (ft_isspace(str[d->tmps.i_tmp]))
 		++d->tmps.i_tmp;
 	if (str[d->tmps.i_tmp] == '\0')
-		ft_ms_error(0, "-display = falta la resolucion Y", str);
+		ft_ms_error(0, "  -Resolution (Y)", str);
 	d->res.r_y = ft_atoi(&str[d->tmps.i_tmp]);
 	if (d->res.r_x < MIN_DISPLAY_X || d->res.r_x > MAX_DISPLAY_X
 	|| d->res.r_y < MIN_DISPLAY_Y || d->res.r_y > MAX_DISPLAY_Y)
@@ -40,7 +40,7 @@ static void		ft_resolution(char *str, t_data *d)
 		d->res.r_y = (MIN_DISPLAY_Y > d->res.r_y) ? MIN_DISPLAY_Y : d->res.r_y;
 	}
 	if (!(d->zbuffer = (double *)malloc(sizeof(double) * d->res.r_x)))
-		ft_ms_error(0, "-Malloc = zbuffer", str);
+		ft_ms_error(0, " -Allocating memory (zbuffer)", str);
 }
 
 void			parser_map(t_data *d, char *line)
@@ -48,7 +48,7 @@ void			parser_map(t_data *d, char *line)
 	int i;
 
 	if ((d->map.x = ft_strlen_no_space(line)) < 4)
-		free_coordinates(d, "  -Mapa muy chiquito", 1);
+		free_coordinates(d, "  -Small map.", 1);
 	if (d->map.error == 0)
 		d->map.error = d->map.x;
 	else
@@ -56,11 +56,11 @@ void			parser_map(t_data *d, char *line)
 		if (d->map.error == d->map.x)
 			;
 		else
-			free_map(d, d->map.y - 1, "  -Mapa mal dibujado");
+			free_map(d, d->map.y - 1, "  -Map.");
 	}
 	conv_map(d, line, 0, d->map.x);
 	if (!(d->map.map[d->map.y] = (int *)malloc(sizeof(int) * d->map.x)))
-		free_map(d, d->map.y, "  -Malloc");
+		free_map(d, d->map.y, " -Allocating memory.");
 	i = -1;
 	while (++i < d->map.x)
 		d->map.map[d->map.y][i] = line[i] - 48;
@@ -74,7 +74,7 @@ static void		center_perser2(t_data *d, char *line)
 			&& d->tex.sky && d->tex.hand1 && d->tex.hand2 && d->tex.hand3)
 		parser_map(d, line);
 	else
-		free_coordinates(d, "  -Parametro faltante", 0);
+		free_coordinates(d, "  -Missing texture.", 0);
 }
 
 static void		center_parser(t_data *d, char *line)
@@ -126,7 +126,7 @@ int				init_parser(int fd, t_data *d, int f)
 	free(line);
 	open_file_texture(d, f);
 	if ((f = open(POISON, O_RDONLY)) == -1)
-		ft_ms_error(0, "  -La textura no carga.", (void *)0);
+		ft_ms_error(0, "  -File texture corrupted.", (void *)0);
 	close(f);
 	return (0);
 }

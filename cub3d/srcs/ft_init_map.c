@@ -72,11 +72,11 @@ void				ft_init_map(char *av, t_data *d)
 	if ((fd = open(av, O_RDONLY)) == -1)
 		ft_ms_error(0, "  -Could not open file.", (void *)0);
 	if (init_parser(fd, d, 0) == -1)
-		ft_ms_error(0, "  -Fallo mientras se leia el archivo.", (void *)0);
+		ft_ms_error(0, "  -Reading from file.", (void *)0);
 	close(fd);
 	if (d->map.boolean == 0 || d->map.boolean > 1)
-		free_map(d, d->map.y - 1, "  -Jugador multiple");
+		free_map(d, d->map.y - 1, "  -Multiple positions.");
 	if (!(d->sprite = (t_spr *)malloc(sizeof(t_spr) * d->sprcount)))
-		free_map(d, d->map.y - 1, "  -Malloc structure sprite");
+		free_map(d, d->map.y - 1, "  -Allocating memory (sprites)");
 	ft_verif(d, d->map.map, 0, d->map.x);
 }
