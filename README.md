@@ -3,14 +3,11 @@
 
 ```sh
 $ status =
-    	#unfinished
-
-$ Recordar =
-	#cambiar los botones a peticion de leo.
-	#screamer (no no no)
-
+    	#finished
+$ note =
+		#?
 $ Problemes
-  #????
+		#????
 
 ```
 #./Cub3D maps/map0.cub
