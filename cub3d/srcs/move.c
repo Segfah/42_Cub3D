@@ -33,7 +33,7 @@ static void		move3(t_data *d)
 			d->pl.posy += -d->pl.dirx * d->sp;
 		if (d->map.map[(int)(d->pl.posy)][(int)(d->pl.posx + d->pl.diry
 		* d->sp)] == 0 || d->map.map[(int)(d->pl.posy)]
-		[(int)(d->pl.posx + d->pl.diry * d->sp)] == 0)
+		[(int)(d->pl.posx + d->pl.diry * d->sp)] == 3)
 			d->pl.posx += d->pl.diry * d->sp;
 	}
 }

@@ -7,14 +7,11 @@ $ status =
 
 $ Recordar =
 	#cambiar los botones a peticion de leo.
-	# --save
 	#Musica
-	#screamer
+	#screamer (no no no)
 
-# Problemes
-Si texture MUR recopier
-fichier non texture
-non xpm
-resolution x2
+$ Problemes
+  #????
+
 ```
 #./Cub3D maps/map0.cub
