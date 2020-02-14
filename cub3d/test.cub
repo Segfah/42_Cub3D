@@ -1,14 +1,10 @@
 R 1400            700
 
-
-
-
 NO ./textures/hogwarts/ron.xpm
 SO ./textures/hogwarts/harry.xpm
 WE ./textures/hogwarts/draco.xpm
 EA ./textures/hogwarts/draco.xpm
 S ./textures/hogwarts/dobby.xpm
-
 
 F ./textures/comun/floor.xpm
 C ./textures/hogwarts/sky.xpm

@@ -43,6 +43,7 @@ typedef struct	s_tex
 	char		*hand1;
 	char		*hand2;
 	char		*hand3;
+	int			resolu;
 }				t_tex;
 
 typedef struct	s_res

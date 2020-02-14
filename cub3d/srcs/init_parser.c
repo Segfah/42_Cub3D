@@ -6,7 +6,7 @@
 /*   By: corozco <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/09 16:14:19 by corozco           #+#    #+#             */
-/*   Updated: 2020/02/11 19:34:17 by corozco          ###   ########.fr       */
+/*   Updated: 2020/02/14 01:19:18 by corozco          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 static void		ft_resolution(char *str, t_data *d)
 {
+	d->tex.resolu = 1;
 	d->tmps.i_tmp = 0;
 	d->res.r_x = ft_atoi(&str[1]);
 	while (str[++d->tmps.i_tmp])
@@ -74,32 +75,33 @@ static void		center_perser2(t_data *d, char *line)
 			&& d->tex.sky && d->tex.hand1 && d->tex.hand2 && d->tex.hand3)
 		parser_map(d, line);
 	else
-		free_coordinates(d, "  -Missing texture.", 0);
+		free_coordinates(d, "  -Missing texture/-Resolution.", 0);
 }
 
 static void		center_parser(t_data *d, char *line)
 {
-	if (ft_strncmp(line, "R", 1) == 0)
+	if (ft_strncmp(line, "R", 1) == 0 && d->tex.resolu == 0)
 		ft_resolution(line, d);
-	else if (ft_strncmp(line, "NO", 2) == 0)
+	else if (ft_strncmp(line, "NO", 2) == 0 && !d->tex.north)
 		d->tex.north = ft_strdup(&(line[3]));
-	else if (ft_strncmp(line, "SO", 2) == 0)
+	else if (ft_strncmp(line, "SO", 2) == 0 && !d->tex.south)
 		d->tex.south = ft_strdup(&(line[3]));
-	else if (ft_strncmp(line, "WE", 2) == 0)
+	else if (ft_strncmp(line, "WE", 2) == 0 && !d->tex.west)
 		d->tex.west = ft_strdup(&(line[3]));
-	else if (ft_strncmp(line, "EA", 2) == 0)
+	else if (ft_strncmp(line, "EA", 2) == 0 && !d->tex.east)
 		d->tex.east = ft_strdup(&(line[3]));
-	else if (ft_strncmp(line, "S", 1) == 0 && *(line + 1) != 'O')
+	else if (ft_strncmp(line, "S", 1) == 0 && *(line + 1)
+	!= 'O' && !d->tex.sprite)
 		d->tex.sprite = ft_strdup(&(line[2]));
-	else if (ft_strncmp(line, "F", 1) == 0)
+	else if (ft_strncmp(line, "F", 1) == 0 && !d->tex.floor)
 		d->tex.floor = ft_strdup(&(line[2]));
-	else if (ft_strncmp(line, "C", 1) == 0)
+	else if (ft_strncmp(line, "C", 1) == 0 && !d->tex.sky)
 		d->tex.sky = ft_strdup(&(line[2]));
-	else if (ft_strncmp(line, "I", 1) == 0)
+	else if (ft_strncmp(line, "I", 1) == 0 && !d->tex.hand1)
 		d->tex.hand1 = ft_strdup(&(line[2]));
-	else if (ft_strncmp(line, "O", 1) == 0)
+	else if (ft_strncmp(line, "O", 1) == 0 && !d->tex.hand2)
 		d->tex.hand2 = ft_strdup(&(line[2]));
-	else if (ft_strncmp(line, "P", 1) == 0)
+	else if (ft_strncmp(line, "P", 1) == 0 && !d->tex.hand3)
 		d->tex.hand3 = ft_strdup(&(line[2]));
 	else
 		center_perser2(d, line);

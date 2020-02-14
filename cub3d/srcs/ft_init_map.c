@@ -32,6 +32,7 @@ static void			resolution(t_data *d)
 	d->cmp_sp = 0;
 	d->pl.mobile = 0;
 	d->pl.life = 5;
+	d->tex.resolu = 0;
 }
 
 static void			ft_cont_map(char *av, t_data *d)
