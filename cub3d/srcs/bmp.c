@@ -13,6 +13,7 @@
 #include "cub3d.h"
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 void	fill_bmp(char **data, t_data *d)
 {
@@ -77,6 +78,7 @@ void	export_bmp(char *filename, t_data *d)
 		free_coordinates(d, "  -Cannot create/Trunc/Write in file .bmp", 0);
 	write(fd, data, (size + 122));
 	close(fd);
+	exit(0);
 }
 
 char	*create_bmp_filename(char *file, int i, t_data *d)

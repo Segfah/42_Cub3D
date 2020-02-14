@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include <stdlib.h>
 
 static int		ft_exit(void)
 {
+	system("killall afplay");
 	exit(0);
 	return (0);
 }
@@ -73,7 +75,10 @@ static int		key_release(int key, t_data *d)
 	if (key == 14)
 		d->move.eright = 0;
 	if (key == 53)
+	{
+		system("killall afplay");
 		exit(0);
+	}
 	if (key == 49)
 		d->pl.mobile = 0;
 	return (0);

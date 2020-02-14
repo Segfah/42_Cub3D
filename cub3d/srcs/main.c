@@ -46,6 +46,7 @@ int				main(int ac, char **av)
 	{
 		mlx_loop_hook(data.mlx_ptr, raycasting, &data);
 		ft_press(&data);
+		system("afplay son/herr_mannelig.mp3 &");
 		mlx_loop(data.mlx_ptr);
 	}
 	else
@@ -55,7 +56,6 @@ int				main(int ac, char **av)
 		while (av[1][i] != '.')
 			i++;
 		export_bmp(create_bmp_filename(av[1], i, &data), &data);
-		exit(1);
 	}
 	return (0);
 }

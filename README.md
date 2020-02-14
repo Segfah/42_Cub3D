@@ -7,7 +7,6 @@ $ status =
 
 $ Recordar =
 	#cambiar los botones a peticion de leo.
-	#Musica
 	#screamer (no no no)
 
 $ Problemes

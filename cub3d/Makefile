@@ -11,7 +11,8 @@
 # **************************************************************************** #
 
 NAME = Cub3D
-HEAD := -I./includes/ -I./minilibx_mms_20191207_beta -I./minilibx_opengl_20191021 -I./libft/includes
+HEAD := -I./includes/ -I./libft/includes
+#HEAD := -I./includes/ -I./minilibx_mms_20191207_beta -I./minilibx_opengl_20191021 -I./libft/includes
 
 CFLAGS = -Wall -Wextra -Werror
 #CFLAGS = -g3 -fsanitize=address -Wall -Wextra -Werror
