@@ -7,7 +7,7 @@ EA ./textures/hogwarts/herma.xpm
 S ./textures/hogwarts/dobby.xpm
 
 F ./textures/comun/floor.xpm
-C ./textures/hogwarts/sky.xpm
+C ./textures/comun/pleine-lune.xpm
 
 
 I ./textures/comun/hand1.xpm

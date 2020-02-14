@@ -7,7 +7,7 @@ EA ./textures/horror/east.xpm
 S ./textures/horror/sprite.xpm
 
 F ./textures/comun/floor.xpm
-C ./textures/horror/sky.xpm
+C ./textures/comun/pleine-lune.xpm
 
 I ./textures/comun/hand1.xpm
 O ./textures/horror/hand2.xpm

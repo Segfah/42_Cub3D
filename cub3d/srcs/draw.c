@@ -18,13 +18,15 @@ void			draw_sky(t_data *d)
 	int			y;
 	int			ctmp;
 
-	ctmp = 0x454332;
 	x = -1;
 	while (++x < d->res.r_x)
 	{
 		y = -1;
 		while (++y < d->res.r_y / 2)
+		{
+			ctmp = d->txt[4].data[y % 1366 * 1366 + x % 1366];
 			d->img.data[y * d->res.r_x + x] = ctmp;
+		}
 	}
 }
 
