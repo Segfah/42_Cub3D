@@ -1,6 +1,6 @@
 R 1400            700
 
-NO ./textures/hogwarts/ron.xpm
+NO ./ron.xpm
 SO ./textures/hogwarts/harry.xpm
 WE ./textures/hogwarts/draco.xpm
 EA ./textures/hogwarts/draco.xpm

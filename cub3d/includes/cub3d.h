@@ -29,7 +29,7 @@
 # define LIFE4 "textures/comun/life4.xpm"
 # define LIFE5 "textures/comun/life5.xpm"
 # define POISON "textures/comun/poison.xpm"
-# define GAMEOVER "textures/horror/gameover.xpm"
+# define GAMEOVER "textures/comun/gameover.xpm"
 
 typedef struct	s_tex
 {
@@ -215,6 +215,7 @@ void			ft_init_map(char *av, t_data *d);
 int				init_parser(int fd, t_data *d);
 void			conv_map(t_data *d, char *line, int i, int y);
 void			ft_verif(t_data *d, int **map, int x, int y);
+int				is_xpm(char *av);
 
 /*
 ** raycasting

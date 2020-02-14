@@ -26,6 +26,11 @@ int				error_management(int ac, char **av)
 	return (0);
 }
 
+int				is_xpm(char *av)
+{
+	return (ft_strlen(av) < 5 || ft_strncmp(&av[ft_strlen(av) - 4], ".xpm", 4));
+}
+
 int				main(int ac, char **av)
 {
 	t_data		data;
