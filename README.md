@@ -5,9 +5,6 @@
 $ status =
     	#finished
 $ note =
-		#?
-$ Problemes
-		#????
-
+	#114
 ```
-#./Cub3D maps/map0.cub
+
