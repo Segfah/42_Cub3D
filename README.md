@@ -4,5 +4,8 @@
 ```sh
 $ status =
     	#finished
+$ Development =
+        # make
+        # ./Cub3D horror.cub or ./Cub3D hogwarts.cub
 ```
 
