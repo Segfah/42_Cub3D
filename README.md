@@ -4,7 +4,5 @@
 ```sh
 $ status =
     	#finished
-$ note =
-	#114
 ```
 
