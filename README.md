@@ -7,5 +7,6 @@ $ status =
 $ Development =
         # make
         # ./Cub3D horror.cub or ./Cub3D hogwarts.cub
+        # press space bar 👊
 ```
 
