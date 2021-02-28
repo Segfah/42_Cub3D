@@ -10,5 +10,7 @@ $ Development =
         # press space bar 👊
 ```
 
+### Le projet ne marche plus (il n'a pas la minilibx)
+
 ![render2](images/imagen2.png)
 ![render3](images/imagen3.png)
