@@ -14,7 +14,7 @@ NAME = Cub3D
 HEAD := -I./includes/ -I./libft/includes
 #HEAD := -I./includes/ -I./minilibx_mms_20191207_beta -I./minilibx_opengl_20191021 -I./libft/includes
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra #-Werror
 #CFLAGS = -g3 -fsanitize=address -Wall -Wextra -Werror
 
 SRC := \
@@ -33,7 +33,7 @@ SRC := \
 	srcs/open_file.c \
 	srcs/bmp.c \
 
-LMLX = -lft -lm -lmlx -framework OpenGL -framework AppKit
+LMLX = -L. -lm -lmlx -lX11 -lXext #-framework OpenGL -framework AppKit
 
 OBJS = $(addprefix objs/, $(SRC:.c=.o))
 
@@ -73,7 +73,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@make -sC ./libft
 	@echo ''
-	@gcc $(HEAD) $(LMLX) $(OBJS) -o $(NAME) -L./libft -lft
+	@gcc $(HEAD)  $(OBJS) -o $(NAME) -L./libft -lft $(LMLX)
 #	@gcc -g3 -fsanitize=address $(HEAD) $(LMLX) $(OBJS) -o $(NAME) -L./libft -lft
 	@echo '	 '
 	@echo '	......( \_/ ) '

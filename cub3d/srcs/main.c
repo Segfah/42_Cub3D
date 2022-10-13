@@ -46,7 +46,7 @@ int				main(int ac, char **av)
 	{
 		mlx_loop_hook(data.mlx_ptr, raycasting, &data);
 		ft_press(&data);
-		system("afplay son/herr_mannelig.mp3 &");
+		// system("afplay son/herr_mannelig.mp3 &");
 		mlx_loop(data.mlx_ptr);
 	}
 	else
