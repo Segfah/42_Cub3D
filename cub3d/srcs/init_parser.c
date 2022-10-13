@@ -93,7 +93,7 @@ static void		center_parser(t_data *d, char *line)
 {
 	if (ft_strncmp(line, "R", 1) == 0 && d->tex.resolu == 0)
 		ft_resolution(line, d);
-	else if (ft_strncmp(line, "NO", 2) == 0 && !d->tex.north)
+	else if (ft_strncmp(line, "NO", 2) == 0 && !d->tex.north) 
 		d->tex.north = ft_strdup(&(line[3]));
 	else if (ft_strncmp(line, "SO", 2) == 0 && !d->tex.south)
 		d->tex.south = ft_strdup(&(line[3]));
@@ -121,6 +121,17 @@ static void		center_parser(t_data *d, char *line)
 int				init_parser(int fd, t_data *d)
 {
 	char		*line;
+
+	d->tex.north = 0;
+	d->tex.south = NULL;
+	d->tex.west = NULL;
+	d->tex.east = NULL;
+	d->tex.sprite = NULL;
+	d->tex.floor = NULL;
+	d->tex.sky = NULL;
+	d->tex.hand1 = NULL;
+	d->tex.hand3 = NULL;
+	d->tex.hand2 = NULL;
 
 	while ((d->tmps.ret = ft_gnl(fd, &line)) > 0)
 	{
